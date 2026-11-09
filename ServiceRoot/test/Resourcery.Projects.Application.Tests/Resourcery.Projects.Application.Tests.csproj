@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Resourcery.Projects</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Resourcery.Projects.Application\Resourcery.Projects.Application.csproj" />
+    <ProjectReference Include="..\Resourcery.Projects.Domain.Tests\Resourcery.Projects.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Oluropo Akinbolade-Jones",
+  "classifications": [
+    "ABP",
+    "Microservice",
+    "Web",
+    "Web API",
+    "ASP.NET",
+    "Angular",
+    "Blazor"
+  ],
+  "identity": "AbpMicroserviceTemplate.NewService",
+  "name": "ABP Microservice NewService Template",
+  "shortName": "abp-microservice-addservice",
+  "sourceName": "Resourcery.Projects",
+  "preferNameDirectory": false,
+  "defaultName": "ServiceNameLower",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "ServiceExtract": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "AfterLastDot",
+      "replaces": "Projects",
+      "fileRename": "Projects"
+    },
+    "ServiceNameLower": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "AfterLastDotLower",
+      "fileRename": "ServiceRoot"
+    },
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "If specified, skips the automatic restore of the project on create."
+    }
+  },
+  "forms": {
+    "AfterLastDot": {
+      "identifier": "replace",
+      "pattern": "^.*\\.(?=[^\\.]+$)",
+      "replacement": ""
+    },
+    "LowerCaseInvariant": {
+      "identifier": "lowerCaseInvariant"
+    },
+    "AfterLastDotLower": {
+      "identifier": "chain",
+      "steps": [
+        "AfterLastDot",
+        "LowerCaseInvariant"
+      ]
+    }
+  },
+  "placeholderFilename": "template-placeholder.txt",
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "modifiers": [
+        {
+          "exclude": [
+            ".template.config/**",
+            ".vs/**",
+            ".git/**",
+            ".github/**",
+            "**/bin/**",
+            "**/obj/**",
+            "**/*.user",
+            "**/.vs/**"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": "This is a microservice template based on the ABP framework with Angular and Blazor frontends."
+}
